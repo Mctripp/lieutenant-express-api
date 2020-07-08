@@ -6,6 +6,7 @@ const destroySchema = new mongoose.Schema({
     type: Number,
     required: true,
     owner: {
+      // Owner of targeted card
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
       required: true
@@ -16,6 +17,7 @@ const destroySchema = new mongoose.Schema({
     type: Number,
     required: true,
     owner: {
+      // Owner of source card
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
       required: true

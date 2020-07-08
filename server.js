@@ -11,6 +11,8 @@ const drawRoutes = require('./app/routes/draw_routes')
 const discardRoutes = require('./app/routes/discard_routes')
 const destroyRoutes = require('./app/routes/destroy_routes')
 const exileRoutes = require('./app/routes/exile_routes')
+const sourceRoutes = require('./app/routes/source_routes')
+const targetRoutes = require('./app/routes/target_routes')
 
 // require middleware
 const errorHandler = require('./lib/error_handler')
@@ -73,6 +75,8 @@ app.use(destroyRoutes)
 app.use(discardRoutes)
 app.use(drawRoutes)
 app.use(exileRoutes)
+app.use(sourceRoutes)
+app.use(targetRoutes)
 
 // register error handling middleware
 // note that this comes after the route middlewares, because it needs to be

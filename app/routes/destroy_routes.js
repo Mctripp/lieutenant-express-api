@@ -29,7 +29,7 @@ const router = express.Router()
 
 // INDEX
 // GET /destroys
-router.get('/destroys', requireToken, (req, res, next) => {
+router.get('/destroys', (req, res, next) => {
   Destroy.find()
     .then(destroys => {
       // `destroys` will be an array of Mongoose documents
@@ -45,7 +45,7 @@ router.get('/destroys', requireToken, (req, res, next) => {
 
 // SHOW
 // GET /destroys/5a7db6c74d55bc51bdf39793
-router.get('/destroys/:id', requireToken, (req, res, next) => {
+router.get('/destroys/:id', (req, res, next) => {
   // req.params.id will be set based on the `:id` in the route
   Destroy.findById(req.params.id)
     .then(handle404)
